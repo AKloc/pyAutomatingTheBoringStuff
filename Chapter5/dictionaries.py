@@ -48,3 +48,21 @@ picnicItems = {'apples': 5, 'cups': 2}
 print('I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.')
 
 # LEFT OFF AT "The setdefault() method"
+# Used when you want to have a default value if the key doesn't have a value.
+# BEFORE:
+spam = {'name': 'Pooka', 'age': 5}
+if 'color' not in spam:
+    spam['color'] = 'black'
+
+# AFTER:
+spam = {'name': 'pooka', 'age': 5}
+spam.setdefault('color', 'black')
+
+
+# Nested dictionarlies and lists are a thing.
+
+nestedDictionary = {'taylor': {'color': 'pink', 'age': 8}}
+dictionaryOfDictionaries = {'taylor':{'color':'pink', 'age':48},
+                            'alex':{'color':'blue', 'age':6}}
+
+derp = 'derp'
