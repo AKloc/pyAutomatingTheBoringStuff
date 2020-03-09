@@ -67,4 +67,37 @@ print('islower(): ' + str(testStr.lower().islower()))
 # another type, only consists of spaces or tabs, is a title, etc. Good
 # for input validation.
 
-# LEFT OFF AT startswith() and endswith()
+# startswith() and endswith(). Case sensitive.
+testStr = 'Hello, world. What\'s up?'
+print('testStr = ' + testStr)
+print('testStr.startswith(\'Hello\') = ' + str(testStr.startswith('Hello')))
+print('testStr.startswith(\'hello\') = ' + str(testStr.startswith('hello')))
+
+# join() and split() methods. For join, you start with the value you want
+# to join everything with and then pass in the list of words you want to join.
+testStr = ', '.join(['Hello', 'World'])
+print(testStr)
+testStr = 'DERP'.join(['Hello', 'World'])
+print(testStr)
+
+# split() is pretty straightforward. Defaults to splitting whitespace.
+testList = 'This is a test list'.split()
+print(testList)
+# ... but we can split on anything.
+testList = 'This is a test list.'.split('s')
+print(testList)
+
+# partition() splits a string into the text before and after a separator.
+testStr = 'Hello, world!'
+print(testStr.partition('world')) # spits back a 3 part list.
+
+
+# Justifying text with rjust(), ljust(), and center().
+# Give the amount of 'columns', and these methods will pad (whitespace by default)
+print('Hello, world!'.ljust(40))
+print('Hello, world!'.rjust(40))
+print('Hello, world!'.center(40))
+print('Hello, world!'.center(40, '*'))
+
+# Remove whitespace with strip(), rstrip(), and lstrip(). Removes whitespace
+# by default, but can again override that.
