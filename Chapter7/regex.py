@@ -172,7 +172,18 @@ afterSubs = agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Ag
 Eve knew Agent Bob was a double agent.')
 print(afterSubs)
 
-# STOPPED AT Managing Complex Regexes
+# Making regexes readable: use re.compile(r'''( and pass re.VERBOSE as second parameter
+# to ignore whitespace and comments in the string.
+phoneNumRegex = re.compile(r'''(
+    (\d{3}|\(\d{3}\))?            # area code. either ddd or (ddd)
+    (\s|-|\.)?                    # separator. either a space, a dash, or a period.
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator. either a space, a dash, or a period.
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension. space followed by parens, an ext, x, or ext
+    )''', re.VERBOSE)
+
+
 
 """
 The ? matches zero or one of the preceding group.
